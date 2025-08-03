@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+    html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        @apply text-gray-900;
+    }
+
+    /* Typography improvements */
+    p {
+        text-wrap: pretty;
+    }
+
+    /* Focus styles */
+    :focus {
+        @apply outline-none ring-2 ring-gray-400 ring-offset-2;
+    }
+
+    /* Selection styles */
+    ::selection {
+        @apply bg-gray-900 text-white;
+    }
+}
+
+/* Custom component styles */
+@layer components {
+    /* WordPress alignment classes */
+    .alignleft {
+        @apply float-left mr-6 mb-4;
+    }
+
+    .alignright {
+        @apply float-right ml-6 mb-4;
+    }
+
+    .aligncenter {
+        @apply mx-auto block;
+    }
+
+    .alignwide {
+        @apply -mx-8 md:-mx-16;
+    }
+
+    .alignfull {
+        @apply -mx-6 md:-mx-12 lg:-mx-24;
+    }
+
+    /* WordPress caption */
+    .wp-caption {
+        @apply max-w-full;
+    }
+
+    .wp-caption-text {
+        @apply text-sm text-gray-600 mt-2 text-center;
+    }
+
+    /* Gutenberg blocks */
+    .wp-block-quote {
+        @apply border-l-4 border-gray-300 pl-6 my-8 italic;
+    }
+
+    .wp-block-separator {
+        @apply border-t border-gray-200 my-12;
+    }
+
+    /* Navigation current item */
+    .current-menu-item > a > span,
+    .current_page_item > a > span {
+        @apply text-gray-600 border-b-2 border-gray-600;
+    }
+
+    /* Screen reader text */
+    .screen-reader-text {
+        @apply absolute left-[-9999px] w-px h-px overflow-hidden;
+    }
+
+    .screen-reader-text:focus {
+        @apply static w-auto h-auto overflow-visible;
+        clip: auto;
+    }
+
+    /* WordPress gallery */
+    .gallery {
+        @apply grid gap-4;
+    }
+
+    .gallery-columns-2 {
+        @apply grid-cols-2;
+    }
+
+    .gallery-columns-3 {
+        @apply grid-cols-3;
+    }
+
+    .gallery-columns-4 {
+        @apply grid-cols-2 md:grid-cols-4;
+    }
+
+    .gallery-item {
+        @apply relative;
+    }
+
+    .gallery-icon img {
+        @apply w-full h-auto rounded;
+    }
+
+    /* Comment form styles */
+    .comment-form label {
+        @apply block text-lg font-medium mb-2;
+    }
+
+    .comment-form .required {
+        @apply text-red-500;
+    }
+
+    /* Pagination */
+    .nav-links {
+        @apply flex justify-between items-center;
+    }
+
+    .page-numbers {
+        @apply inline-block px-4 py-2 mx-1 text-lg rounded hover:bg-gray-100 transition-colors duration-200;
+    }
+
+    .page-numbers.current {
+        @apply bg-gray-900 text-white hover:bg-gray-700;
+    }
+
+    /* Widget styles */
+    .widget {
+        @apply mb-8;
+    }
+
+    .widget ul {
+        @apply space-y-2;
+    }
+
+    .widget ul li {
+        @apply text-lg;
+    }
+
+    .widget a {
+        @apply text-gray-900 hover:text-gray-600 transition-colors duration-300;
+    }
+
+    /* Search widget */
+    .widget_search .search-form {
+        @apply relative;
+    }
+
+    .widget_search .search-field {
+        @apply w-full px-4 py-2 pr-20 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400;
+    }
+
+    .widget_search .search-submit {
+        @apply absolute right-1 top-1 px-4 py-1 bg-gray-900 text-white rounded hover:bg-gray-700 transition-colors duration-300;
+    }
+}
+
+/* Custom utility styles */
+@layer utilities {
+    /* Smooth scroll for anchor links */
+    .smooth-scroll {
+        scroll-behavior: smooth;
+    }
+
+    /* Typography utilities */
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    /* Custom animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fadeIn {
+        animation: fadeIn 0.5s ease-out;
+    }
+}
+
+/* Print styles */
+@media print {
+    .site-header,
+    .site-footer,
+    .navigation,
+    .comment-form,
+    .widget-area,
+    .scroll-to-top {
+        @apply hidden;
+    }
+
+    body {
+        @apply text-black bg-white;
+    }
+
+    a {
+        @apply text-black underline;
+    }
+
+    .entry-content {
+        @apply max-w-full;
+    }
+}

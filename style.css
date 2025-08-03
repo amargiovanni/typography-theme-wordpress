@@ -1,0 +1,14 @@
+/*
+Theme Name: Typography Theme
+Theme URI: https://margiovanni.it
+Author: Andrea Margiovanni
+Author URI: https://margiovanni.it
+Description: A modern, responsive WordPress theme with clean design focused on exceptional typography. Features large, readable text with Tailwind CSS and vanilla JavaScript.
+Version: 1.0.0
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: typography-theme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, typography-focused, responsive-layout
+*/
+
+/* Theme styles will be loaded via Tailwind CSS */

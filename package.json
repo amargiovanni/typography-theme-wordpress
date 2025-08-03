@@ -1,0 +1,17 @@
+{
+  "name": "typography-theme",
+  "version": "1.0.0",
+  "description": "A modern WordPress theme focused on typography",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/css/style.css -o ./dist/css/style.css --watch",
+    "build": "npx tailwindcss -i ./src/css/style.css -o ./dist/css/style.css --minify",
+    "build-editor": "npx tailwindcss -i ./src/css/editor-style.css -o ./dist/css/editor-style.css --minify"
+  },
+  "keywords": ["wordpress", "theme", "tailwind", "typography"],
+  "author": "Andrea Margiovanni",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "@tailwindcss/typography": "^0.5.10"
+  }
+}
