@@ -1,5 +1,7 @@
 # Typography Theme
 
+![Typography Theme Screenshot](screenshot.png)
+
 A modern, responsive WordPress theme with clean design focused on exceptional typography. Features large, readable text built with Tailwind CSS and vanilla JavaScript.
 
 ## Features
