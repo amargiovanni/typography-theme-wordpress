@@ -26,13 +26,13 @@ get_header(); ?>
                                 </h1>
                             <?php else : ?>
                                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight mb-6">
-                                    <a href="<?php the_permalink(); ?>" class="text-gray-900 hover:text-gray-600 transition-colors duration-300 no-underline">
+                                    <a href="<?php the_permalink(); ?>" class="transition-colors duration-300 no-underline" style="color: rgb(var(--color-text-primary));">
                                         <?php the_title(); ?>
                                     </a>
                                 </h2>
                             <?php endif; ?>
 
-                            <div class="text-lg text-gray-600 space-x-4">
+                            <div class="text-lg space-x-4" style="color: rgb(var(--color-text-secondary));">
                                 <time datetime="<?php echo get_the_date('c'); ?>" class="italic">
                                     <?php echo get_the_date(); ?>
                                 </time>
@@ -53,7 +53,7 @@ get_header(); ?>
                             } else {
                                 the_excerpt();
                                 ?>
-                                <a href="<?php the_permalink(); ?>" class="inline-block mt-6 text-xl font-medium text-gray-900 hover:text-gray-600 transition-colors duration-300">
+                                <a href="<?php the_permalink(); ?>" class="inline-block mt-6 text-xl font-medium transition-colors duration-300" style="color: rgb(var(--color-text-primary));">
                                     Continue reading →
                                 </a>
                                 <?php

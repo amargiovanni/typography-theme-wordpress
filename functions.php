@@ -119,6 +119,9 @@ function typography_theme_scripts() {
     // Enqueue smooth scroll script
     wp_enqueue_script('typography-theme-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array(), TYPOGRAPHY_THEME_VERSION, true);
 
+    // Enqueue theme switcher script
+    wp_enqueue_script('typography-theme-switcher', get_template_directory_uri() . '/js/theme-switcher.js', array(), TYPOGRAPHY_THEME_VERSION, true);
+
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }

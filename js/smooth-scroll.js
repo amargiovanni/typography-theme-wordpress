@@ -46,7 +46,7 @@
         // Smooth scroll to top button
         const scrollToTopButton = document.createElement('button');
         scrollToTopButton.innerHTML = '↑';
-        scrollToTopButton.className = 'scroll-to-top fixed bottom-8 right-8 w-12 h-12 bg-gray-900 text-white rounded-full opacity-0 invisible transition-all duration-300 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 z-50';
+        scrollToTopButton.className = 'scroll-to-top fixed bottom-24 right-6 w-12 h-12 rounded-full opacity-0 invisible transition-all duration-300 focus:outline-none focus:ring-2 z-50';
         scrollToTopButton.setAttribute('aria-label', 'Scroll to top');
         document.body.appendChild(scrollToTopButton);
 

@@ -2,15 +2,16 @@
 
 ![Typography Theme Screenshot](screenshot.png)
 
-A modern, responsive WordPress theme with clean design focused on exceptional typography. Features large, readable text built with Tailwind CSS and vanilla JavaScript.
+A modern, responsive WordPress theme with clean design focused on exceptional typography. Features large, readable text, automatic dark mode support, and built with Tailwind CSS and vanilla JavaScript.
 
 ## Features
 
 - **Typography-First Design**: Large, readable fonts with beautiful typography using Google Fonts (Crimson Text for headings, Inter for body text)
+- **Dark Mode Support**: Automatic dark/light mode detection based on system preferences with manual toggle
 - **Fully Responsive**: Mobile-first design that looks great on all devices
 - **Clean & Minimal**: Focus on content with minimal distractions
 - **Tailwind CSS**: Modern utility-first CSS framework for easy customization
-- **Vanilla JavaScript**: Lightweight navigation and smooth scrolling without dependencies
+- **Vanilla JavaScript**: Lightweight navigation, smooth scrolling, and theme switching without dependencies
 - **Accessibility Ready**: ARIA labels, keyboard navigation, and screen reader support
 - **WordPress Standards**: Follows WordPress coding standards and best practices
 - **Print Optimized**: Clean print styles for better readability when printed
@@ -83,7 +84,18 @@ fontFamily: {
 
 ### Colors
 
-The theme uses a minimal color palette based on Tailwind's gray scale. You can customize colors in your child theme or by modifying the Tailwind configuration.
+The theme uses a minimal color palette based on Tailwind's gray scale with automatic dark mode support. Colors adapt based on the user's system preferences or manual selection.
+
+### Dark Mode
+
+The theme includes automatic dark mode detection and a manual toggle button:
+
+- **Automatic Detection**: Follows system preferences using `prefers-color-scheme`
+- **Manual Toggle**: Floating button in the bottom-right corner to switch themes
+- **Persistent Choice**: User preference is saved in localStorage
+- **Smooth Transitions**: All color changes include smooth CSS transitions
+
+To customize dark mode colors, edit the CSS custom properties in `src/css/style.css`.
 
 ### Spacing
 
@@ -95,7 +107,13 @@ The theme uses generous spacing for better readability. You can adjust the spaci
 typography-theme/
 ├── dist/               # Compiled CSS files
 ├── js/                 # JavaScript files
+│   ├── navigation.js   # Mobile menu toggle
+│   ├── smooth-scroll.js # Smooth scrolling & scroll-to-top
+│   └── theme-switcher.js # Dark mode functionality
 ├── src/                # Source CSS files
+│   └── css/
+│       ├── style.css   # Main styles with dark mode variables
+│       └── editor-style.css # Editor styles
 ├── functions.php       # Theme functions
 ├── style.css          # Theme information
 ├── index.php          # Main template

@@ -13,7 +13,7 @@ get_header(); ?>
                     <?php the_title(); ?>
                 </h1>
                 
-                <div class="flex flex-wrap items-center text-lg text-gray-600 space-x-4">
+                <div class="flex flex-wrap items-center text-lg space-x-4" style="color: rgb(var(--color-text-secondary));">
                     <time datetime="<?php echo get_the_date('c'); ?>" class="italic">
                         <?php echo get_the_date(); ?>
                     </time>
@@ -32,24 +32,24 @@ get_header(); ?>
                 <?php endif; ?>
             </header>
 
-            <div class="entry-content prose prose-xl lg:prose-2xl max-w-none prose-headings:font-serif prose-a:text-gray-900 prose-a:no-underline hover:prose-a:text-gray-600">
+            <div class="entry-content prose prose-xl lg:prose-2xl max-w-none prose-headings:font-serif prose-a:no-underline" style="color: rgb(var(--color-text-primary));">
                 <?php the_content(); ?>
             </div>
 
-            <footer class="entry-footer mt-16 pt-8 border-t border-gray-200">
+            <footer class="entry-footer mt-16 pt-8 border-t" style="border-color: rgb(var(--color-border));">
                 <?php if (has_tag()) : ?>
                     <div class="mb-8">
                         <span class="text-lg font-medium mr-3">Tags:</span>
-                        <?php the_tags('<span class="inline-block bg-gray-100 rounded-full px-4 py-2 text-base mr-2 mb-2">', '</span><span class="inline-block bg-gray-100 rounded-full px-4 py-2 text-base mr-2 mb-2">', '</span>'); ?>
+                        <?php the_tags('<span class="inline-block rounded-full px-4 py-2 text-base mr-2 mb-2" style="background-color: rgb(var(--color-bg-hover)); color: rgb(var(--color-text-primary));">', '</span><span class="inline-block rounded-full px-4 py-2 text-base mr-2 mb-2" style="background-color: rgb(var(--color-bg-hover)); color: rgb(var(--color-text-primary));">', '</span>'); ?>
                     </div>
                 <?php endif; ?>
 
                 <nav class="post-navigation flex justify-between items-center">
                     <div class="nav-previous">
-                        <?php previous_post_link('%link', '<span class="text-lg text-gray-600">←</span> <span class="text-xl font-medium">%title</span>'); ?>
+                        <?php previous_post_link('%link', '<span class="text-lg" style="color: rgb(var(--color-text-secondary));">←</span> <span class="text-xl font-medium">%title</span>'); ?>
                     </div>
                     <div class="nav-next text-right">
-                        <?php next_post_link('%link', '<span class="text-xl font-medium">%title</span> <span class="text-lg text-gray-600">→</span>'); ?>
+                        <?php next_post_link('%link', '<span class="text-xl font-medium">%title</span> <span class="text-lg" style="color: rgb(var(--color-text-secondary));">→</span>'); ?>
                     </div>
                 </nav>
             </footer>

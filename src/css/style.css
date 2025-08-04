@@ -114,22 +114,44 @@
     }
 
     .wp-caption-text {
-        @apply text-sm text-gray-600 mt-2 text-center;
+        @apply text-sm mt-2 text-center;
+        color: rgb(var(--color-text-secondary));
     }
 
     /* Gutenberg blocks */
     .wp-block-quote {
-        @apply border-l-4 border-gray-300 pl-6 my-8 italic;
+        @apply border-l-4 pl-6 my-8 italic;
+        border-color: rgb(var(--color-border-strong));
     }
 
     .wp-block-separator {
-        @apply border-t border-gray-200 my-12;
+        @apply border-t my-12;
+        border-color: rgb(var(--color-border));
     }
 
     /* Navigation current item */
     .current-menu-item > a > span,
     .current_page_item > a > span {
-        @apply text-gray-600 border-b-2 border-gray-600;
+        @apply border-b-2;
+        color: rgb(var(--color-text-secondary));
+        border-color: rgb(var(--color-text-secondary));
+    }
+
+    /* Navigation hover */
+    .main-navigation a:hover span,
+    .mobile-navigation a:hover span {
+        color: rgb(var(--color-text-secondary));
+    }
+
+    /* Footer navigation hover */
+    .site-footer a:hover span,
+    .site-footer a:hover {
+        color: rgb(var(--color-text-primary));
+    }
+
+    /* Menu toggle hover */
+    #menu-toggle:hover {
+        background-color: rgb(var(--color-bg-hover));
     }
 
     /* Screen reader text */
@@ -176,17 +198,36 @@
         @apply text-red-500;
     }
 
+    .comment-form input[type="text"],
+    .comment-form input[type="email"],
+    .comment-form input[type="url"],
+    .comment-form textarea {
+        background-color: rgb(var(--color-bg-secondary));
+        color: rgb(var(--color-text-primary));
+        border-color: rgb(var(--color-border));
+    }
+
     /* Pagination */
     .nav-links {
         @apply flex justify-between items-center;
     }
 
     .page-numbers {
-        @apply inline-block px-4 py-2 mx-1 text-lg rounded hover:bg-gray-100 transition-colors duration-200;
+        @apply inline-block px-4 py-2 mx-1 text-lg rounded transition-colors duration-200;
+        color: rgb(var(--color-text-primary));
+    }
+
+    .page-numbers:hover {
+        background-color: rgb(var(--color-bg-hover));
     }
 
     .page-numbers.current {
-        @apply bg-gray-900 text-white hover:bg-gray-700;
+        background-color: rgb(var(--color-accent));
+        color: rgb(var(--color-bg-primary));
+    }
+
+    .page-numbers.current:hover {
+        background-color: rgb(var(--color-accent-hover));
     }
 
     /* Widget styles */
@@ -203,7 +244,12 @@
     }
 
     .widget a {
-        @apply text-gray-900 hover:text-gray-600 transition-colors duration-300;
+        @apply transition-colors duration-300;
+        color: rgb(var(--color-text-primary));
+    }
+
+    .widget a:hover {
+        color: rgb(var(--color-text-secondary));
     }
 
     /* Search widget */
@@ -212,11 +258,24 @@
     }
 
     .widget_search .search-field {
-        @apply w-full px-4 py-2 pr-20 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400;
+        @apply w-full px-4 py-2 pr-20 border rounded-md focus:outline-none focus:ring-2;
+        background-color: rgb(var(--color-bg-secondary));
+        color: rgb(var(--color-text-primary));
+        border-color: rgb(var(--color-border));
+    }
+
+    .widget_search .search-field:focus {
+        ring-color: rgb(var(--color-text-secondary));
     }
 
     .widget_search .search-submit {
-        @apply absolute right-1 top-1 px-4 py-1 bg-gray-900 text-white rounded hover:bg-gray-700 transition-colors duration-300;
+        @apply absolute right-1 top-1 px-4 py-1 rounded transition-colors duration-300;
+        background-color: rgb(var(--color-accent));
+        color: rgb(var(--color-bg-primary));
+    }
+
+    .widget_search .search-submit:hover {
+        background-color: rgb(var(--color-accent-hover));
     }
 }
 
@@ -247,6 +306,108 @@
     .animate-fadeIn {
         animation: fadeIn 0.5s ease-out;
     }
+}
+
+/* Prose styles for dark mode */
+.prose {
+    color: rgb(var(--color-text-primary));
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    color: rgb(var(--color-text-primary));
+}
+
+.prose a {
+    color: rgb(var(--color-accent));
+}
+
+.prose a:hover {
+    color: rgb(var(--color-accent-hover));
+}
+
+.prose strong {
+    color: rgb(var(--color-text-primary));
+}
+
+.prose code {
+    color: rgb(var(--color-text-primary));
+    background-color: rgb(var(--color-bg-hover));
+}
+
+.prose pre {
+    background-color: rgb(var(--color-bg-secondary));
+    color: rgb(var(--color-text-primary));
+}
+
+.prose blockquote {
+    color: rgb(var(--color-text-secondary));
+    border-left-color: rgb(var(--color-border-strong));
+}
+
+.prose figcaption {
+    color: rgb(var(--color-text-muted));
+}
+
+.prose thead {
+    color: rgb(var(--color-text-primary));
+    border-bottom-color: rgb(var(--color-border));
+}
+
+.prose tbody tr {
+    border-bottom-color: rgb(var(--color-border));
+}
+
+/* Post navigation links */
+.post-navigation a {
+    color: rgb(var(--color-text-primary));
+    @apply transition-colors duration-300;
+}
+
+.post-navigation a:hover {
+    color: rgb(var(--color-text-secondary));
+}
+
+/* Article links */
+article h2 a:hover {
+    color: rgb(var(--color-text-secondary));
+}
+
+.entry-content a:hover {
+    color: rgb(var(--color-text-secondary));
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    @apply shadow-lg;
+}
+
+.theme-toggle:hover {
+    @apply shadow-xl;
+    transform: scale(1.1);
+}
+
+.theme-toggle:focus {
+    @apply outline-none ring-4;
+    ring-color: rgb(var(--color-text-secondary));
+    ring-offset-color: rgb(var(--color-bg-primary));
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+    background-color: rgb(var(--color-accent));
+    color: rgb(var(--color-bg-primary));
+    @apply shadow-lg;
+}
+
+.scroll-to-top:hover {
+    background-color: rgb(var(--color-accent-hover));
+    @apply shadow-xl;
+    transform: scale(1.1);
+}
+
+.scroll-to-top:focus {
+    ring-color: rgb(var(--color-text-secondary));
+    ring-offset-color: rgb(var(--color-bg-primary));
 }
 
 /* Print styles */
