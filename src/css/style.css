@@ -2,6 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Custom Properties for theming */
+:root {
+    /* Light mode colors */
+    --color-bg-primary: 255 255 255; /* white */
+    --color-bg-secondary: 249 250 251; /* gray-50 */
+    --color-bg-hover: 243 244 246; /* gray-100 */
+    --color-text-primary: 17 24 39; /* gray-900 */
+    --color-text-secondary: 75 85 99; /* gray-600 */
+    --color-text-muted: 107 114 128; /* gray-500 */
+    --color-border: 229 231 235; /* gray-200 */
+    --color-border-strong: 209 213 219; /* gray-300 */
+    --color-accent: 17 24 39; /* gray-900 */
+    --color-accent-hover: 75 85 99; /* gray-600 */
+    --color-selection-bg: 17 24 39; /* gray-900 */
+    --color-selection-text: 255 255 255; /* white */
+}
+
+/* Dark mode colors */
+[data-theme="dark"] {
+    --color-bg-primary: 17 24 39; /* gray-900 */
+    --color-bg-secondary: 31 41 55; /* gray-800 */
+    --color-bg-hover: 55 65 81; /* gray-700 */
+    --color-text-primary: 243 244 246; /* gray-100 */
+    --color-text-secondary: 209 213 219; /* gray-300 */
+    --color-text-muted: 156 163 175; /* gray-400 */
+    --color-border: 55 65 81; /* gray-700 */
+    --color-border-strong: 75 85 99; /* gray-600 */
+    --color-accent: 243 244 246; /* gray-100 */
+    --color-accent-hover: 209 213 219; /* gray-300 */
+    --color-selection-bg: 243 244 246; /* gray-100 */
+    --color-selection-text: 17 24 39; /* gray-900 */
+}
+
+/* Auto dark mode based on system preference */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --color-bg-primary: 17 24 39;
+        --color-bg-secondary: 31 41 55;
+        --color-bg-hover: 55 65 81;
+        --color-text-primary: 243 244 246;
+        --color-text-secondary: 209 213 219;
+        --color-text-muted: 156 163 175;
+        --color-border: 55 65 81;
+        --color-border-strong: 75 85 99;
+        --color-accent: 243 244 246;
+        --color-accent-hover: 209 213 219;
+        --color-selection-bg: 243 244 246;
+        --color-selection-text: 17 24 39;
+    }
+}
+
 /* Custom base styles */
 @layer base {
     html {
@@ -10,7 +61,9 @@
     }
 
     body {
-        @apply text-gray-900;
+        @apply transition-colors duration-300;
+        background-color: rgb(var(--color-bg-primary));
+        color: rgb(var(--color-text-primary));
     }
 
     /* Typography improvements */
@@ -20,12 +73,15 @@
 
     /* Focus styles */
     :focus {
-        @apply outline-none ring-2 ring-gray-400 ring-offset-2;
+        @apply outline-none ring-2 ring-offset-2;
+        ring-color: rgb(var(--color-text-secondary));
+        ring-offset-color: rgb(var(--color-bg-primary));
     }
 
     /* Selection styles */
     ::selection {
-        @apply bg-gray-900 text-white;
+        background-color: rgb(var(--color-selection-bg));
+        color: rgb(var(--color-selection-text));
     }
 }
 
